@@ -1,23 +1,17 @@
 import "./App.css";
-import Componente from "./Componente";
+import Card from "./Components/Card";
+import Navbar from "./Components/Navbar";
+import Contact from "./Components/Contact";
+
 function App() {
-  let mensaje = "Hola";
-  let num = 1263676;
   return (
     <>
+      <Navbar />
       <h1>Bienvenidos a Vite</h1>
-      <input type="text" />
-      <button>Enviar</button>
-      <section>
-        <h4>{mensaje} </h4>
-        <p>{num}</p>
-      </section>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <Componente />
+      <Card nombre="Germán" email={"germfra@gmail.com"} />
+      <Card nombre="Joshua" email={"joshta@yahoo.com.ar"} />
+      <Card nombre="Claudia" email={"claulnj@hotmail.com"} />
+      <Contact />
     </>
   );
 }
