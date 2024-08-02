@@ -1,17 +1,13 @@
 import Button from "./Button";
-
-const Card = ({ nombre, email }) => {
-  //   console.log(props);
-  //   const { nombre, email } = props;
+import CardStyles from "../Styles/Card.module.css";
+console.log(CardStyles);
+const Card = ({ recipe }) => {
+  // console.log(recipe)
   return (
-    <div className="card">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/9187/9187604.png"
-        alt=""
-        width={100}
-      />
-      <h4>Nombre: {nombre}</h4>
-      <h4>Email: {email}</h4>
+    <div className={CardStyles.cardContainer}>
+      <img src={recipe.img} alt="" className={CardStyles.cardImg} />
+      <h3>{recipe.tipo}</h3>
+      <h4>{recipe.precio}</h4>
       <Button>Ver detalle</Button>
     </div>
   );
