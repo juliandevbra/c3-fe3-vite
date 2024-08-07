@@ -17,6 +17,7 @@ button {
   min-height: 30px;
   background-color: firebrick;
   color: #fff;
+  margin: 5px;
   cursor: pointer;
 }
 .list-container {

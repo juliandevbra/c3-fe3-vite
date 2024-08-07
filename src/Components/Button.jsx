@@ -1,5 +1,9 @@
 const Button = (props) => {
-  return <button>{props.children}</button>;
+  return (
+    <button disabled={props.disabled} onClick={props.onClick}>
+      {props.children}
+    </button>
+  );
 };
 
 export default Button;
