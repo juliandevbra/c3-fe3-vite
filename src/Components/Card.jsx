@@ -1,6 +1,7 @@
 import Button from "./Button";
 import CardStyles from "../Styles/Card.module.css";
 import Counter from "./Counter";
+import { Link } from "react-router-dom";
 
 const Card = ({ recipe, cart, setCart }) => {
   return (
@@ -10,7 +11,10 @@ const Card = ({ recipe, cart, setCart }) => {
       <h4>${recipe.pricePerServing}</h4>
       <Counter />
       <Button onClick={() => setCart([...cart, recipe])}>🛒</Button>
-      <Button>Ver detalle</Button>
+      <Link to={"/detail/" + recipe.id}>
+        {/* Navegación dinámica para ver componente Detail */}
+        <Button>Ver detalle</Button>
+      </Link>
     </div>
   );
 };
