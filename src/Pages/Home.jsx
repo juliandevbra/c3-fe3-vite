@@ -12,13 +12,13 @@ const titleStyles = {
 };
 
 const Home = () => {
-  const { recipes } = useRecipeStates();
+  const { state } = useRecipeStates();
 
   return (
     <>
       <h1 style={titleStyles}>Lista de pizza</h1>
       <div className="list-container">
-        {recipes.map((recipe) => (
+        {state.recipes.map((recipe) => (
           <Card key={recipe.id} recipe={recipe} />
         ))}
       </div>
