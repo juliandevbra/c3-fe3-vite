@@ -1,11 +1,8 @@
 import axios from "axios";
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  useReducer,
-} from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
+import { getRecipes } from "../Service/apiCalls";
 
 const RecipeStates = createContext();
 
@@ -36,11 +33,12 @@ const Context = ({ children }) => {
   const url =
     "https://api.spoonacular.com/recipes/random?number=10&apiKey=" + apiKey;
   useEffect(() => {
-    axios(url).then((res) => {
-      console.log(res.data.recipes);
-      // setRecipes(res.data.recipes);
-      dispatch({ type: "GET_RECIPES", payload: res.data.recipes });
-    });
+    const fetchData = async () => {
+      const data = await getRecipes(url);
+      console.log(data);
+      dispatch({ type: "GET_RECIPES", payload: data });
+    };
+    fetchData();
   }, []);
 
   return (

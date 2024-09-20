@@ -1,6 +1,7 @@
 import Button from "../Components/Button";
 import Form from "../Components/Form";
 import Navbar from "../Components/Navbar";
+import withErrorBoundary from "../HOC/withErrorBoundary";
 
 const Contact = () => {
   return (
@@ -10,5 +11,5 @@ const Contact = () => {
     </>
   );
 };
-
-export default Contact;
+const ContactWithError = withErrorBoundary(Contact);
+export default ContactWithError;

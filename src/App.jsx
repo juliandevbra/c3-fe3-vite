@@ -6,12 +6,11 @@ import Contact from "./Pages/Contact";
 import Cart from "./Pages/Cart";
 import { routes } from "./utils/routes";
 import Detail from "./Pages/Detail";
-import ReducerCount from "./Components/ReducerCount";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <>
-      {/* <ReducerCount /> */}
       <Navbar />
       <Routes>
         <Route path={routes.home} element={<Home />} />
@@ -23,6 +22,7 @@ function App() {
           element={<h1>Error 404 - Page not Found</h1>}
         />
       </Routes>
+      <ToastContainer />
     </>
   );
 }
